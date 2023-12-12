@@ -24,32 +24,48 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+
+
     public function  foodmenu()
     {
         
         return view("admin.foodmenu");
     }
 
-    public function  upload(Request $request)
-    {
-        $data = new food;
-        
-        $image=$request->image;
+public function upload(Request $request)
+{
+  $data = new food;
+  
+  $image=$request->image;
 
-        $imagename=time().'.' .$image->getClientOriginalExtension();
-        
-        $request->image->move('foodimage',$imagename);
-        $data->image=$imagename;
+  $imagename=time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('foodimage',$imagename);
+            $data->image=$imagename;
 
-        $data->title=$request->title;
-        $data->price=$request->price;
-        $data->description=$request->description;
+            $data->title=$request->title;
+            $data->price=$request->price;
+            $data->description=$request->description;
+            $data->save();
+            return redirect()->back();
+  
+}
 
-        $sata->save();
 
-        return rediect()->back();
-        
-    }
+
+
+public function reservation(Request $request)
+{
+  $data = new reservation;
+  
+  
+
+            $data->name=$request->name;
+            $data->email=$request->email;
+            $data->phone=$request->phone;
+            $data->save();
+            return redirect()->back();
+
 
     
+}
 }

@@ -8,7 +8,8 @@
   <head>
     <!-- Required meta tags -->
     @include("admin.admincss");
-  </head>
+  
+</head>
   <body>
   
    
@@ -17,25 +18,26 @@
 
   <div style= "position: relative; top: 60px; right:-150px">
 
-    <form  action="{{url('/uploadfood')}}" method="" enctype="multipart/from-data">
-    
+    <form  action="{{url('/uploadfood')}}" method="post" enctype="multipart/from-data">
+        @csrf
+   
     <div>
-        <label for="">Title</label>
+        <label >Title</label>
         <input style="color:blue" type="text" name="title"title placeholder="write a title" required>
     </div>
 
     <div>
-        <label for="">Price</label>
+        <label >Price</label>
         <input style="color:blue" type="num" name="price" title placeholder="price" required>
     </div>
 
     <div>
-        <label for="">Image</label>
+        <label >Image</label>
         <input style="color:blue" type="file" name="image" required>
     </div>
 
     <div>
-        <label for="">Description</label>
+        <label >Description</label>
         <input style="color:blue" type="text" name="description" placeholder="description" required>
     </div>
 

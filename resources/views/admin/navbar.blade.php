@@ -24,7 +24,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-playlist-play"></i>
               </span>
-              <span class="menu-title">Food</span>
+              <span class="menu-title">FoodMenu</span>
             </a>
           </li>
           <li class="nav-item menu-items">
