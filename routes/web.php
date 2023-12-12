@@ -1,11 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\HomeController;
-
-use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\Admincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,18 +15,30 @@ use App\Http\Controllers\AdminController;
 */
 
 
-Route::get("/",[HomeController::class,"index"]);
 
-Route::get("/users",[AdminController::class,"user"]);
+Route:: get("/",[Homecontroller::class,"index"]);
 
-Route::get("/foodmenu",[AdminController::class,"foodmenu"]);
+Route:: get("/users",[Admincontroller::class,"user"]);
 
-Route::post("/uploadfood",[AdminController::class,"upload"]);
+Route:: get("/deletemenu/{id}",[Admincontroller::class,"deletemenu"]);
+
+Route:: get("/foodmenu",[Admincontroller::class,"foodmenu"]);
+
+Route:: post("/uploadfood",[Admincontroller::class,"upload"]);
+
+Route:: get("/deleteuser/{id}",[Admincontroller::class,"deleteuser"]);
+
+Route:: post("/reservation",[Admincontroller::class,"reservation"]);
+
+Route:: get("/viewreservation",[Admincontroller::class,"viewreservation"]);
+
+Route:: post("/addcart/{id}",[Homecontroller::class,"addcart"]);
+
+Route:: get("/showcart/{id}",[Homecontroller::class,"showcart"]);
 
 
-Route::get("/deleteuser/{id}",[AdminController::class,"deleteuser"]);
+Route:: get("/redirects",[Homecontroller::class,"redirects"]);
 
-Route::get("/redirects",[HomeController::class,"redirects"]);
 
 
 Route::middleware([
